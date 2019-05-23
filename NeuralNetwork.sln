@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{CC4A2D73-1118-4683-9969-22D5B7268629}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork", "Network\NeuralNetwork.csproj", "{CC4A2D73-1118-4683-9969-22D5B7268629}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
