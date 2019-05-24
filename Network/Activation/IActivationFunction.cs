@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NeuralNetwork.Activation
 {
-    interface IActivationFunction
+    public interface IActivationFunction
     {
         double CalculateOutput(double input);
     }

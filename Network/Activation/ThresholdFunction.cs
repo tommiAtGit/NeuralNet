@@ -6,9 +6,14 @@ namespace NeuralNetwork.Activation
 {
     class ThresholdFunction : IActivationFunction
     {
+        public ThresholdFunction()
+        {
+
+        }
+
         double IActivationFunction.CalculateOutput(double input)
         {
-            throw new NotImplementedException();
+            return (input >= 0) ? 1 : -1;
         }
     }
 }
