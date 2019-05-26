@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeuralNetwork.Synapses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,28 +8,30 @@ namespace NeuralNetwork.Neuron
     public abstract class Neuron
     {
         protected int InputCount { get; set; }
-        protected List<double> InputValues { get; set; }
-        protected List<double> WeightValues { get; set; }
+        protected List<ISynapse> Inputs { get; set;}
         protected double BiasValue { get; set; }
         protected double OutputValue { get; set; }
 
         public Neuron(int inputCount)
         {
             this.InputCount = inputCount;
-            InitBiasWeight();
+            InitWeights();
             InitBiasWeight();
         }
 
-        public abstract double Compute();
+        public abstract void Compute();
+        public abstract void UpdateWeight(double learningRate, double delta);
 
         private void InitWeights()
         {
-            WeightValues = new List<double>();
+            Inputs = new List<ISynapse>();
             for (int i = 0; i < InputCount; i++)
             {
+                ISynapse Input = new Synapse();
                 Random random = new Random((int)DateTime.Now.Ticks);
-                double weight =  random.NextDouble();
-                WeightValues.Add(weight);
+                Input.Weight = random.NextDouble();
+                Input.PreviousWeight = 0;
+                Inputs.Add(Input);
             }
         }
         private void InitBiasWeight()

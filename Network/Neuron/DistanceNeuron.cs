@@ -11,7 +11,13 @@ namespace NeuralNetwork.Neuron
             this.InputCount = inputCount;
         }
 
-        public override double Compute()
+        public override void Compute()
+        {
+            throw new NotImplementedException();
+            
+        }
+
+        public override void UpdateWeight(double learningRate, double delta)
         {
             throw new NotImplementedException();
         }

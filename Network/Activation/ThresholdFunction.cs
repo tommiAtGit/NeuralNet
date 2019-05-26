@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NeuralNetwork.Activation
 {
-    class ThresholdFunction : IActivationFunction
+    public class ThresholdFunction : IActivationFunction
     {
         public ThresholdFunction()
         {
