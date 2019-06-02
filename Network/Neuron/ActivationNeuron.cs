@@ -18,7 +18,7 @@ namespace NeuralNetwork.Neuron
             this.ActFunction = activationFunc;
         }
 
-        public override void Compute()
+        public override double Compute()
         {
             double sum = 0;
             if ((Inputs == null) || (Inputs.Count == 0)){
@@ -28,6 +28,7 @@ namespace NeuralNetwork.Neuron
                 sum += Synapse.Weight * Synapse.InputValue;
             });
             OutputValue = ActFunction.CalculateOutput(sum);
+            return OutputValue;
 
         }
 
@@ -42,6 +43,10 @@ namespace NeuralNetwork.Neuron
                 Synapse.Weight += learningRate * delta;
             });
             
+        }
+        public double GetOutputValue()
+        {
+            return OutputValue;
         }
     }
 }

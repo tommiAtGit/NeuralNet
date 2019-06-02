@@ -17,9 +17,10 @@ namespace NeuralNetwork.Neuron
             this.InputCount = inputCount;
             InitWeights();
             InitBiasWeight();
+
         }
 
-        public abstract void Compute();
+        public abstract double Compute();
         public abstract void UpdateWeight(double learningRate, double delta);
 
         private void InitWeights()
