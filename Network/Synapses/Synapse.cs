@@ -17,7 +17,14 @@ namespace NeuralNetwork.Synapses
 
         public void UpdateWeight(double learningRate, double delta)
         {
-            throw new NotImplementedException();
+
+            if ((learningRate == 0) || (delta == 0))
+            {
+                throw new ArgumentException();
+            }
+            PreviousWeight = Weight;
+            Weight += learningRate * delta;
+            
         }
     }
 }
