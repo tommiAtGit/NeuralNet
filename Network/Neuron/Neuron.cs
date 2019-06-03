@@ -22,6 +22,7 @@ namespace NeuralNetwork.Neuron
 
         public abstract double Compute();
         public abstract void UpdateWeight(double learningRate, double delta);
+        public abstract void FeedForward(double [] Inputvalues);
 
         private void InitWeights()
         {

@@ -17,6 +17,11 @@ namespace NeuralNetwork.Neuron
             
         }
 
+        public override void FeedForward(double[] Inputvalues)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void UpdateWeight(double learningRate, double delta)
         {
             throw new NotImplementedException();

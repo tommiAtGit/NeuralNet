@@ -32,21 +32,30 @@ namespace NeuralNetwork.Neuron
 
         }
 
-        public override void UpdateWeight(double learningRate, double delta)
+        public override void FeedForward(double[] Inputvalues)
         {
-            if ((learningRate == 0)||(delta == 0))
+            int i = 0;
+            if (this.InputCount < Inputvalues.Length)
             {
                 throw new ArgumentException();
-            } 
+            }
             Inputs.ForEach(Synapse => {
-                Synapse.PreviousWeight = Synapse.Weight;
-                Synapse.Weight += learningRate * delta;
+                Synapse.InputValue = Inputvalues[i];
+                i++;
             });
-            
+        }
+
+        public override void UpdateWeight(double learningRate, double delta)
+        {
+            Inputs.ForEach(Synapse => {
+
+                Synapse.UpdateWeight(learningRate, delta);
+            });
         }
         public double GetOutputValue()
         {
             return OutputValue;
         }
+
     }
 }
