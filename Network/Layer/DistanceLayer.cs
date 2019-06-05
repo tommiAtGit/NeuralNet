@@ -29,7 +29,15 @@ namespace NeuralNetwork.Layer
 
         public object GetNeuron(int index)
         {
-            throw new NotImplementedException();
+            if (index >= 0)
+            {
+                return Neurons[index];
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+            
         }
 
         public int GetNeuronCount()

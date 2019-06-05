@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NeuralNetwork.Synapses;
 
 namespace NeuralNetwork.Neuron
 {
-    class DistanceNeuron:Neuron
+    public class DistanceNeuron:Neuron
     {
         public DistanceNeuron(int inputCount) : base(inputCount)
         {
@@ -20,6 +21,11 @@ namespace NeuralNetwork.Neuron
         public override void FeedForward(double[] Inputvalues)
         {
             throw new NotImplementedException();
+        }
+
+        public override List<ISynapse> FetchInputs()
+        {
+            return Inputs;
         }
 
         public override void UpdateWeight(double learningRate, double delta)

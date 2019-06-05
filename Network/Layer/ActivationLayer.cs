@@ -28,12 +28,12 @@ namespace NeuralNetwork.Layer
 
         public int GetNeuronCount()
         {
-            throw new NotImplementedException();
+            return Neurons.Count;
         }
 
         public object GetNeuron(int index)
         {
-            throw new NotImplementedException();
+            return Neurons[index];
         }
 
         public object getLastNeuron()

@@ -57,5 +57,9 @@ namespace NeuralNetwork.Neuron
             return OutputValue;
         }
 
+        public override List<ISynapse> FetchInputs()
+        {
+            return Inputs;
+        }
     }
 }
